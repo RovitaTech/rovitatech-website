@@ -40,6 +40,7 @@ export const products = [
   { name: "MemeForge", href: "/privacy-policy/memeforge", note: "Dedicated privacy policy page" },
   { name: "OweBuddy", href: "/privacy-policy/owebuddy", note: "Dedicated privacy policy page" },
   { name: "ParkGlide", href: "/privacy-policy/parkglide", note: "Dedicated privacy policy page" },
+  { name: "PDF4you", href: "/privacy-policy/pdf4you", note: "Dedicated privacy policy page" },
   { name: "RovieRase", href: "/privacy-policy/rovierase", note: "Dedicated privacy policy page" },
   { name: "RoviWay", href: "/privacy-policy/roviway", note: "Dedicated privacy policy page" },
   { name: "StatusSaver", href: "/privacy-policy/statussaver", note: "Dedicated privacy policy page" },
