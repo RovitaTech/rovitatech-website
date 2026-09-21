@@ -52,55 +52,44 @@ function Item({ label, children }: { label?: string; children: ReactNode }) {
   )
 }
 
-const cellStyle = {
-  color: '#374151',
-  lineHeight: '1.6',
-  padding: '12px',
-  borderBottom: '1px solid #e5e7eb',
-  textAlign: 'left',
-  verticalAlign: 'top',
-} as const
-
 const providers = [
   {
     name: 'Supabase',
     role: 'Sign-in, accounts and anonymous sessions',
-    data: 'Email, hashed password, user ID, session tokens, IP address',
+    data: 'email, hashed password, user ID, session tokens, IP address',
   },
   {
     name: 'Railway (or our hosting provider)',
     role: 'Runs our conversion server',
-    data: 'Uploaded files while being processed, results, request logs',
+    data: 'uploaded files while being processed, results, request logs',
   },
   {
     name: 'RevenueCat',
     role: 'Manages purchases and Pro status',
-    data: 'App user ID, purchase and subscription details, IP address and device information',
+    data: 'app user ID, purchase and subscription details, IP address and device information',
   },
   {
     name: 'Apple / Google',
     role: 'Take payments and run the app stores',
-    data: 'Handled under their own privacy policies',
+    data: 'handled under their own privacy policies',
   },
 ] as const
 
 export default function PDF4youPrivacyPolicy() {
   return (
-    <div style={{
+    <div className="policy-page" style={{
       minHeight: '100vh',
       backgroundColor: '#f5f5f5',
-      padding: '40px 20px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
     }}>
-      <div style={{
+      <div className="policy-card" style={{
         maxWidth: '800px',
         width: '100%',
         backgroundColor: 'white',
         borderRadius: '8px',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        padding: '80px 100px',
         margin: '20px 0'
       }}>
         <div style={{ textAlign: 'center', marginBottom: '50px' }}>
@@ -215,26 +204,13 @@ export default function PDF4youPrivacyPolicy() {
             <P>
               We share information only with service providers that help us run the app, and only what they need for that purpose. They act on our instructions and are bound by their own privacy commitments.
             </P>
-            <div style={{ overflowX: 'auto', marginBottom: '15px' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '15px' }}>
-                <thead>
-                  <tr>
-                    <th style={{ ...cellStyle, color: '#1f2937', borderBottom: '2px solid #d1d5db' }}>Provider</th>
-                    <th style={{ ...cellStyle, color: '#1f2937', borderBottom: '2px solid #d1d5db' }}>What they do</th>
-                    <th style={{ ...cellStyle, color: '#1f2937', borderBottom: '2px solid #d1d5db' }}>Information involved</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {providers.map((provider) => (
-                    <tr key={provider.name}>
-                      <td style={cellStyle}><strong>{provider.name}</strong></td>
-                      <td style={cellStyle}>{provider.role}</td>
-                      <td style={cellStyle}>{provider.data}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <List>
+              {providers.map((provider) => (
+                <Item key={provider.name} label={`${provider.name}:`}>
+                  {provider.role}. <em>Information involved:</em> {provider.data}.
+                </Item>
+              ))}
+            </List>
             <P>
               We may also disclose information if the law requires it, to protect people’s safety or our rights, or in connection with a merger, sale or reorganisation of our business (we would tell you and you could delete your account first).
             </P>

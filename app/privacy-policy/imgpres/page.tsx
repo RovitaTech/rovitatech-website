@@ -8,21 +8,19 @@ export const metadata: Metadata = {
 
 export default function ImgPresPrivacyPolicy() {
   return (
-    <div style={{ 
+    <div className="policy-page" style={{ 
       minHeight: '100vh', 
       backgroundColor: '#f5f5f5', 
-      padding: '40px 20px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
     }}>
-      <div style={{
+      <div className="policy-card" style={{
         maxWidth: '800px',
         width: '100%',
         backgroundColor: 'white',
         borderRadius: '8px',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        padding: '80px 100px',
         margin: '20px 0'
       }}>
         <div style={{ textAlign: 'center', marginBottom: '50px' }}>

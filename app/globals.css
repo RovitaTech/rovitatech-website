@@ -84,3 +84,23 @@ body {
   background-size: 4rem 4rem;
   mask-image: radial-gradient(circle at center, black 20%, transparent 85%);
 }
+
+/* Legal pages (privacy policy, terms of use): desktop padding, tighter on phones */
+.policy-page {
+  padding: 40px 20px;
+}
+
+.policy-card {
+  padding: 80px 100px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .policy-page {
+    padding: 12px;
+  }
+
+  .policy-card {
+    padding: 32px 20px;
+  }
+}
