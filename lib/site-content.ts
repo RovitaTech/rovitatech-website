@@ -36,6 +36,7 @@ export const services = [
 export const products = [
   { name: "BilyBucks", href: "/privacy-policy/bilybucks", note: "Dedicated privacy policy page" },
   { name: "ChirpFake", href: "/privacy-policy/chirpfake", note: "Dedicated privacy policy page" },
+  { name: "CrewZeitplan", href: "/privacy-policy/crewzeitplan", note: "Dedicated privacy policy page" },
   { name: "ImgPres", href: "/privacy-policy/imgpres", note: "Dedicated privacy policy page" },
   { name: "MemeForge", href: "/privacy-policy/memeforge", note: "Dedicated privacy policy page" },
   { name: "OweBuddy", href: "/privacy-policy/owebuddy", note: "Dedicated privacy policy page" },
