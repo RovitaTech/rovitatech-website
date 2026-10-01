@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative isolate overflow-hidden bg-ink text-white">
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[radial-gradient(70%_55%_at_50%_0%,rgba(74,60,255,0.5),transparent_70%),radial-gradient(40%_30%_at_85%_10%,rgba(27,0,179,0.55),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(70%_55%_at_50%_0%,rgba(60,105,225,0.5),transparent_70%),radial-gradient(40%_30%_at_85%_10%,rgba(10,40,112,0.55),transparent_70%)]"
       />
 
       <Container className="pt-24 pb-16 text-center sm:pt-32 sm:pb-20">

@@ -3,7 +3,7 @@ import { ContactSection } from "@/components/home/contact-section";
 import { FeaturedApps } from "@/components/home/featured-apps";
 import { Hero } from "@/components/home/hero";
 import { PrivacySection } from "@/components/home/privacy-section";
-import { StudioSection } from "@/components/home/studio-section";
+import { ServicesSection } from "@/components/home/services-section";
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
       <FeaturedApps />
       <AppGrid />
       <PrivacySection />
-      <StudioSection />
+      <ServicesSection />
       <ContactSection />
     </main>
   );

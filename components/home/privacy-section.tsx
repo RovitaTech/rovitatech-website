@@ -24,7 +24,7 @@ export function PrivacySection() {
     <section className="relative isolate overflow-hidden bg-ink py-24 text-white sm:py-36">
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[radial-gradient(50%_60%_at_50%_110%,rgba(74,60,255,0.4),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(50%_60%_at_50%_110%,rgba(60,105,225,0.4),transparent_70%)]"
       />
       <Container>
         <SectionHeading tone="dark" eyebrow="Privacy" title="Private by design. Not by fine print.">
@@ -36,7 +36,7 @@ export function PrivacySection() {
           {stats.map((stat) => (
             <div key={stat.label} className="reveal flex flex-col-reverse justify-end gap-3 bg-ink p-8 sm:p-10">
               <dt className="max-w-[26ch] text-[1.0625rem] leading-snug text-white/70">{stat.label}</dt>
-              <dd className="display-xl bg-[linear-gradient(180deg,#fff,#a7a2ff)] bg-clip-text text-transparent tabular-nums">
+              <dd className="display-xl bg-[linear-gradient(180deg,#fff,#a9c0ff)] bg-clip-text text-transparent tabular-nums">
                 {stat.value}
               </dd>
             </div>

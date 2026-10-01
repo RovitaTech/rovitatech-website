@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { ContactSection } from "@/components/home/contact-section";
-import { CapabilityList } from "@/components/home/studio-section";
+import { ServiceList } from "@/components/services/service-list";
 import { ArrowLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
@@ -12,7 +12,7 @@ import { principles } from "@/lib/studio";
 export const metadata: Metadata = {
   title: "Studio",
   description:
-    "Rovitatech is an independent software studio. We design, build and run our own apps for iPhone, Android and Mac.",
+    "Rovitatech is an independent software studio building its own apps and client products for iPhone, Android, Mac and the web.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,8 +20,8 @@ export default function AboutPage() {
   return (
     <main>
       <PageHero eyebrow="The studio" title="We make software we would want to use.">
-        Rovitatech is an independent software studio. We design, build and run our own apps:{" "}
-        {appStats.total} so far, across iPhone, Android and Mac.
+        Rovitatech is an independent software studio. We design, build and run our own apps,{" "}
+        {appStats.total} so far across iPhone, Android and Mac, and build products for clients.
       </PageHero>
 
       <section className="py-24 sm:py-32">
@@ -45,13 +45,16 @@ export default function AboutPage() {
 
       <section className="bg-mist py-24 sm:py-32">
         <Container>
-          <SectionHeading align="left" eyebrow="What we build" title="From first sketch to store listing." />
-          <div className="mt-14">
-            <CapabilityList />
-          </div>
-          <div className="mt-12">
-            <ArrowLink href="/apps">See the apps</ArrowLink>
-          </div>
+          <SectionHeading align="left" eyebrow="What we build" title="From first sketch to store listing.">
+            For ourselves, and for clients.
+          </SectionHeading>
+        </Container>
+        <Container width="wide" className="mt-12 px-3 sm:px-4">
+          <ServiceList surface="white" />
+        </Container>
+        <Container className="mt-10 flex flex-wrap gap-x-7">
+          <ArrowLink href="/services">Services and technology</ArrowLink>
+          <ArrowLink href="/apps">See the apps</ArrowLink>
         </Container>
       </section>
 

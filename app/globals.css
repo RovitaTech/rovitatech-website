@@ -13,10 +13,10 @@
   --color-mist: #f5f5f7;
   --color-paper: #fdfdfe;
 
-  /* Brand: the blue of the Rovitatech "R" */
-  --color-brand: #1b00b3;
-  --color-brand-bright: #6a63ff;
-  --color-link: #2b24e0;
+  /* Brand: the navy-to-blue gradient of the Rovitatech "R" */
+  --color-brand: #0a2870;
+  --color-brand-bright: #7d9df2;
+  --color-link: #2450c8;
 
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 

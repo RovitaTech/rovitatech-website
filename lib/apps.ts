@@ -185,7 +185,7 @@ export const apps: readonly AppEntry[] = [
     onDevice: true,
     noAccount: true,
     glyph: "disk",
-    tint: ["#5b8cff", "#1b00b3"],
+    tint: ["#5b8cff", "#0a2870"],
     featured: true,
     legal: [
       {

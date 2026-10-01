@@ -5,7 +5,7 @@ import { legalEntries } from "@/lib/legal";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/apps", "/about", "/legal", "/support"].map((path) => ({
+  const pages = ["", "/apps", "/services", "/about", "/legal", "/support"].map((path) => ({
     url: `${site.url}${path}`,
     priority: path === "" ? 1 : 0.8,
   }));

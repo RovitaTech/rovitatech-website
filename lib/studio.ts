@@ -1,33 +1,4 @@
-/** What the studio builds. Shared by the home page and /about. */
-export const capabilities = [
-  {
-    glyph: "phone",
-    title: "iPhone and Android apps",
-    description:
-      "Consumer and business apps, from quick utilities to full marketplaces with accounts, chat and listings.",
-  },
-  {
-    glyph: "mac",
-    title: "Mac apps",
-    description:
-      "Native-feeling desktop tools that work on your files locally, without sending them anywhere.",
-  },
-  {
-    glyph: "server",
-    title: "Backends and APIs",
-    description:
-      "Sign-in, sync, file processing and storage, built on providers we name in every privacy policy.",
-  },
-  {
-    glyph: "card",
-    title: "Subscriptions and purchases",
-    description:
-      "In-app purchases handled through the App Store and Google Play, so we never see your card.",
-  },
-] as const;
-
-export type CapabilityGlyph = (typeof capabilities)[number]["glyph"];
-
+/** The rules the studio works by. Used on /about. */
 export const principles = [
   {
     title: "Do one job well",

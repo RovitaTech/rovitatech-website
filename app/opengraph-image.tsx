@@ -21,7 +21,7 @@ export default function OpenGraphImage() {
           padding: 80,
           color: "#fff",
           backgroundColor: "#08080a",
-          backgroundImage: "linear-gradient(180deg, rgba(74,60,255,0.55), rgba(8,8,10,0) 65%)",
+          backgroundImage: "linear-gradient(180deg, rgba(60,105,225,0.55), rgba(8,8,10,0) 65%)",
         }}
       >
         <div style={{ display: "flex", fontSize: 34, fontWeight: 600, letterSpacing: -1 }}>

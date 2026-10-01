@@ -13,13 +13,14 @@ export const site = {
   legalName: "RovitaTech",
   tagline: "Independent software studio",
   description:
-    "Rovitatech is an independent software studio building apps for iPhone, Android and Mac, with privacy treated as the default rather than a setting.",
+    "Rovitatech is an independent software studio. We build our own apps for iPhone, Android and Mac, and design and develop mobile, web and backend products for clients.",
   email: "rovitatech@gmail.com",
   url: resolveSiteUrl(),
 } as const;
 
 export const mainNav = [
   { label: "Apps", href: "/apps" },
+  { label: "Services", href: "/services" },
   { label: "Studio", href: "/about" },
   { label: "Privacy", href: "/legal" },
   { label: "Support", href: "/support" },

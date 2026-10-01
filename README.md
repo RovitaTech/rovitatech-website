@@ -31,21 +31,24 @@ app/
   apps/page.tsx           App catalogue, grouped by category
   apps/[slug]/page.tsx    One page per app, generated from lib/apps.ts
   legal/page.tsx          Legal centre: searchable list of every document
+  services/page.tsx       Client services, technology stack and process
   about/  support/        Studio and support pages
   privacy-policy/<app>/   Privacy policies (URLs are linked from the app stores)
   terms-of-use/<app>/     Terms of use
-  sitemap.ts  robots.ts  opengraph-image.tsx  not-found.tsx
+  icon.tsx  apple-icon.tsx  opengraph-image.tsx  sitemap.ts  robots.ts  not-found.tsx
 components/
-  brand/                  Logo
+  brand/                  Logo mark and icon tile
   layout/                 Site header and footer
   ui/                     Container, buttons, section heading, page hero
   apps/                   App icon, card, platform list, tile illustrations
   home/                   Home page sections
+  services/               Service tiles and the technology spec sheet
   legal/                  Policy page shell, prose blocks, table of contents, index
 lib/
   apps.ts                 The app catalogue: single source of truth
   legal.ts                Legal documents, derived from the catalogue
-  studio.ts               Studio capabilities and principles
+  services.ts             Client services, technology stack, process steps
+  studio.ts               Studio principles
   site.ts                 Company name, email, navigation, site URL
 ```
 
@@ -96,6 +99,11 @@ Policy URLs are submitted to the App Store and Google Play. Do not rename or mov
 Each app currently shows a generated icon tile. To use the real icon, put it in
 `public/apps/` and set `icon: "/apps/<slug>.png"` on the app. To show download buttons on an
 app page, set `links: { appStore, googlePlay, macAppStore, website }`.
+
+### Change services or the technology list
+
+Edit `services`, `stack` or `processSteps` in `lib/services.ts`. The home page, `/services`
+and `/about` all read from it.
 
 ## Environment
 

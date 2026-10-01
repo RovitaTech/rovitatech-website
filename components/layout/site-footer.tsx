@@ -7,6 +7,7 @@ import { mailto, site } from "@/lib/site";
 
 const companyLinks = [
   { label: "All apps", href: "/apps" },
+  { label: "Services", href: "/services" },
   { label: "Studio", href: "/about" },
   { label: "Support", href: "/support" },
   { label: "Legal centre", href: "/legal" },
