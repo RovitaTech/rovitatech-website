@@ -5,6 +5,12 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    // Policy pages are long-form legal prose kept verbatim; quotes and
+    // apostrophes in the text are intentional.
+    files: ["app/privacy-policy/**/*.tsx", "app/terms-of-use/**/*.tsx"],
+    rules: { "react/no-unescaped-entities": "off" },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

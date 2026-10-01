@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import { EmailLink, Item, List, P, PolicyShell, Section, SubSection, linkStyle } from '../policy-ui'
+import { LegalDocument } from '@/components/legal/legal-document'
+import { EmailLink, Item, List, P, Section, SubSection } from '@/components/legal/prose'
 
 export const metadata: Metadata = {
-  title: 'Aviso de Privacidad - Carmexio | Rovitatech',
+  title: 'Aviso de Privacidad - Carmexio',
   description: 'Aviso de Privacidad de Carmexio, la app para comprar y vender autos seminuevos revisados en México. Conoce cómo tratamos los datos de tu cuenta, anuncios, fotos y mensajes.',
   keywords: 'aviso de privacidad, Carmexio, autos seminuevos, autos usados México, protección de datos, derechos ARCO, Rovitatech',
 }
@@ -12,17 +13,20 @@ export const metadata: Metadata = {
 export default function CarmexioAvisoDePrivacidad() {
   return (
     <div lang="es-MX">
-      <PolicyShell
-        heading="Aviso de Privacidad"
-        effectiveDate="Fecha de entrada en vigor: 1 de octubre de 2026"
-        footer="© 2026 RovitaTech. Todos los derechos reservados."
+      <LegalDocument
+        app="carmexio"
+        kind="privacy"
+        title="Aviso de Privacidad"
+        subtitle="Carmexio"
+        dates={["Fecha de entrada en vigor: 1 de octubre de 2026"]}
+        lang="es-MX"
       >
         <Section title="Introducción">
           <P>
             Este Aviso de Privacidad explica qué información recopila Carmexio (la “app”, que incluye las aplicaciones móviles de Carmexio para iOS y Android y el sitio web de Carmexio), cómo se utiliza y qué opciones tienes. Carmexio es una agencia de autos seminuevos en México: los autos se revisan y se venden en las sucursales de Carmexio, y los compradores tratan con Carmexio, nunca directamente con el dueño del auto. La app es proporcionada por RovitaTech (“nosotros”), responsable del tratamiento de tus datos personales. ¿Dudas? Escríbenos a <EmailLink />.
           </P>
           <P>
-            <Link href="/privacy-policy/carmexio" style={linkStyle}>
+            <Link href="/privacy-policy/carmexio">
               Read this policy in English
             </Link>
           </P>
@@ -103,11 +107,11 @@ export default function CarmexioAvisoDePrivacidad() {
         <Section title="5. Dónde se almacenan los datos">
           <P>
             Los datos de cuenta, anuncios y chat se almacenan en Supabase (autenticación, base de datos y almacenamiento de archivos), y la API de Carmexio está alojada en Railway. Los datos viajan cifrados (HTTPS) y pueden procesarse en servidores ubicados fuera de México. Estos proveedores tratan los datos por cuenta nuestra conforme a sus propias prácticas de privacidad y seguridad:{' '}
-            <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" style={linkStyle}>
+            <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">
               supabase.com/privacy
             </a>{' '}
             y{' '}
-            <a href="https://railway.com/legal/privacy" target="_blank" rel="noopener noreferrer" style={linkStyle}>
+            <a href="https://railway.com/legal/privacy" target="_blank" rel="noopener noreferrer">
               railway.com/legal/privacy
             </a>
             .
@@ -163,16 +167,16 @@ export default function CarmexioAvisoDePrivacidad() {
         </Section>
 
         <Section title="13. Contacto">
-          <p style={{ color: '#374151', lineHeight: '1.6', marginBottom: '15px' }}>
+          <p>
             Si tienes preguntas sobre este Aviso de Privacidad o sobre el tratamiento de tus datos, contáctanos en:
           </p>
-          <p style={{ color: '#374151', lineHeight: '1.6' }}>
+          <p>
             <strong>RovitaTech</strong>
             <br />
             <strong>Correo:</strong> <EmailLink />
           </p>
         </Section>
-      </PolicyShell>
+      </LegalDocument>
     </div>
   )
 }

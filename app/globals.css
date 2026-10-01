@@ -1,106 +1,226 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@theme {
+  --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+  /* Neutrals */
+  --color-ink: #08080a;
+  --color-graphite: #1d1d1f;
+  --color-mute: #6e6e73;
+  --color-faint: #86868b;
+  --color-line: #d2d2d7;
+  --color-hairline: #e8e8ed;
+  --color-mist: #f5f5f7;
+  --color-paper: #fdfdfe;
+
+  /* Brand: the blue of the Rovitatech "R" */
+  --color-brand: #1b00b3;
+  --color-brand-bright: #6a63ff;
+  --color-link: #2b24e0;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 70s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background:
-    radial-gradient(circle at top, rgba(124, 58, 237, 0.22), transparent 30%),
-    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.12), transparent 22%),
-    linear-gradient(180deg, #050816 0%, #09111f 45%, #060910 100%);
-  color: #f8fafc;
-  overflow-x: hidden;
-}
-
-::selection {
-  background: rgba(168, 85, 247, 0.35);
-  color: #ffffff;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #c084fc 0%, #60a5fa 52%, #f472b6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.surface-card {
-  background: rgba(8, 12, 24, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.28);
-}
-
-.soft-border {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.section-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.55rem 0.9rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #cbd5e1;
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 4.25rem);
-  line-height: 0.98;
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  color: #f8fafc;
-}
-
-.section-copy {
-  font-size: 1.04rem;
-  line-height: 1.8;
-  color: #cbd5e1;
-}
-
-.section-panel {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(8, 12, 24, 0.96));
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.32);
-}
-
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 4rem 4rem;
-  mask-image: radial-gradient(circle at center, black 20%, transparent 85%);
-}
-
-/* Legal pages (privacy policy, terms of use): desktop padding, tighter on phones */
-.policy-page {
-  padding: 40px 20px;
-}
-
-.policy-card {
-  padding: 80px 100px;
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 640px) {
-  .policy-page {
-    padding: 12px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
-  .policy-card {
-    padding: 32px 20px;
+  body {
+    background: var(--color-paper);
+    color: var(--color-graphite);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-brand-bright) 28%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-bright);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Display type scale, shared by every page */
+  .display-xl {
+    font-size: clamp(2.75rem, 8.2vw, 6.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+  }
+
+  .display-lg {
+    font-size: clamp(2.25rem, 5.6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+  }
+
+  .display-md {
+    font-size: clamp(1.75rem, 3.6vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+
+  .lede {
+    font-size: clamp(1.0625rem, 1.6vw, 1.375rem);
+    line-height: 1.45;
+    letter-spacing: -0.012em;
+  }
+
+  .eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  /* Scroll-linked entrance. Pure CSS: content is fully visible wherever
+     scroll timelines or motion are unavailable. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        animation: reveal linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 40%;
+      }
+    }
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+  }
+
+  /* Long-form legal text. Policy pages are plain semantic HTML; all of
+     their typography lives here. */
+  .legal-prose {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-graphite);
+    overflow-wrap: anywhere;
+  }
+
+  .legal-prose h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.022em;
+    font-weight: 600;
+    color: var(--color-ink);
+    scroll-margin-top: 5.5rem;
+  }
+
+  .legal-prose > :first-child,
+  .legal-prose > :first-child > h2:first-child,
+  .legal-prose > div:first-child > :first-child {
+    margin-top: 0;
+  }
+
+  .legal-prose h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.625rem;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    letter-spacing: -0.014em;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .legal-prose p {
+    margin-bottom: 1rem;
+  }
+
+  .legal-prose ul,
+  .legal-prose ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .legal-prose ul {
+    list-style: disc;
+  }
+
+  .legal-prose ol {
+    list-style: decimal;
+  }
+
+  .legal-prose li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+  }
+
+  .legal-prose li::marker {
+    color: var(--color-faint);
+  }
+
+  .legal-prose strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .legal-prose a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-link) 35%, transparent);
+    text-underline-offset: 3px;
+  }
+
+  .legal-prose a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .legal-prose .legal-callout {
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    background: var(--color-mist);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .legal-prose .legal-callout > :last-child {
+    margin-bottom: 0;
+  }
+
+  .legal-prose .legal-fine {
+    font-size: 0.9375rem;
+    color: var(--color-mute);
   }
 }

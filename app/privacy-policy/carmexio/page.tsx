@@ -1,27 +1,30 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import { EmailLink, Item, List, P, PolicyShell, Section, SubSection, linkStyle } from './policy-ui'
+import { LegalDocument } from '@/components/legal/legal-document'
+import { EmailLink, Item, List, P, Section, SubSection } from '@/components/legal/prose'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Carmexio | Rovitatech',
+  title: 'Privacy Policy - Carmexio',
   description: 'Privacy Policy for Carmexio, the app to buy and sell inspected pre-owned cars in Mexico. Learn how account, listing, photo and chat data is handled.',
   keywords: 'privacy policy, Carmexio, used cars Mexico, autos seminuevos, car marketplace, data protection, Rovitatech',
 }
 
 export default function CarmexioPrivacyPolicy() {
   return (
-    <PolicyShell
-      heading="Privacy Policy"
-      effectiveDate="Effective Date: October 1, 2026"
-      footer="© 2026 RovitaTech. All rights reserved."
+    <LegalDocument
+      app="carmexio"
+      kind="privacy"
+      title="Privacy Policy"
+      subtitle="Carmexio"
+      dates={["Effective Date: October 1, 2026"]}
     >
       <Section title="Introduction">
         <P>
           This Privacy Policy explains what information Carmexio (the “app”, including the Carmexio mobile apps for iOS and Android and the Carmexio website) collects, how it is used, and the choices you have. Carmexio is a pre-owned car dealer in Mexico: cars are inspected and sold through Carmexio showrooms, and buyers deal with Carmexio, never directly with the car’s owner. The app is provided by RovitaTech (“we”, “us”). Questions? Write to <EmailLink />.
         </P>
         <P>
-          <Link href="/privacy-policy/carmexio/es" style={linkStyle}>
+          <Link href="/privacy-policy/carmexio/es">
             Leer este aviso en español
           </Link>
         </P>
@@ -100,11 +103,11 @@ export default function CarmexioPrivacyPolicy() {
       <Section title="5. Where Data Is Stored">
         <P>
           Account, listing and chat data is stored with Supabase (authentication, database and file storage), and the Carmexio API is hosted on Railway. Data is encrypted in transit (HTTPS) and may be processed on servers outside Mexico. These providers process data on our behalf under their own privacy and security practices:{' '}
-          <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" style={linkStyle}>
+          <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">
             supabase.com/privacy
           </a>{' '}
           and{' '}
-          <a href="https://railway.com/legal/privacy" target="_blank" rel="noopener noreferrer" style={linkStyle}>
+          <a href="https://railway.com/legal/privacy" target="_blank" rel="noopener noreferrer">
             railway.com/legal/privacy
           </a>
           .
@@ -160,15 +163,15 @@ export default function CarmexioPrivacyPolicy() {
       </Section>
 
       <Section title="13. Contact Us">
-        <p style={{ color: '#374151', lineHeight: '1.6', marginBottom: '15px' }}>
+        <p>
           If you have any questions about this Privacy Policy or our data practices, please contact us at:
         </p>
-        <p style={{ color: '#374151', lineHeight: '1.6' }}>
+        <p>
           <strong>RovitaTech</strong>
           <br />
           <strong>Email:</strong> <EmailLink />
         </p>
       </Section>
-    </PolicyShell>
+    </LegalDocument>
   )
 }
