@@ -94,11 +94,12 @@ changes, update its date in the page and the matching `updated` / `updatedLabel`
 
 Policy URLs are submitted to the App Store and Google Play. Do not rename or move them.
 
-### Real app icons and store links
+### App icons, screenshots and store links
 
-Each app currently shows a generated icon tile. To use the real icon, put it in
-`public/apps/` and set `icon: "/apps/<slug>.png"` on the app. To show download buttons on an
-app page, set `links: { appStore, googlePlay, macAppStore, website }`.
+Icons live in `public/apps/<slug>.png` (512px) and are set with `icon` on the app. An app
+without one falls back to a generated tile. Screenshots go in `public/apps/screenshots/` and
+are listed under `screenshots`; they appear as a gallery on the app page. To show download
+buttons, set `links: { appStore, googlePlay, macAppStore, website }`.
 
 ### Change services or the technology list
 

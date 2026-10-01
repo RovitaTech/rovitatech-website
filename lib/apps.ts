@@ -51,6 +51,8 @@ export type LegalDoc = {
   updatedLabel: string;
 };
 
+export type Screenshot = { src: string; alt: string; width: number; height: number };
+
 export type StoreLinks = {
   appStore?: string;
   googlePlay?: string;
@@ -77,6 +79,8 @@ export type AppEntry = {
   /** Optional real icon in /public (e.g. "/apps/carmexio.png"). */
   icon?: string;
   links?: StoreLinks;
+  /** Store screenshots in /public, shown as a gallery on the app page. */
+  screenshots?: readonly Screenshot[];
   featured?: boolean;
   legal: readonly LegalDoc[];
 };
@@ -149,8 +153,15 @@ export const apps: readonly AppEntry[] = [
     onDevice: false,
     noAccount: true,
     glyph: "document",
-    tint: ["#ff5a4d", "#b3121f"],
+    tint: ["#7c4dff", "#e0607e"],
+    icon: "/apps/pdf4you.png",
     featured: true,
+    screenshots: [
+      { src: "/apps/screenshots/pdf4you-1.jpg", alt: "PDF4you screenshot: All tools in one place", width: 720, height: 1558 },
+      { src: "/apps/screenshots/pdf4you-2.jpg", alt: "PDF4you screenshot: Compress large PDFs", width: 720, height: 1280 },
+      { src: "/apps/screenshots/pdf4you-3.jpg", alt: "PDF4you screenshot: Sign with your finger", width: 720, height: 1280 },
+      { src: "/apps/screenshots/pdf4you-4.jpg", alt: "PDF4you screenshot: Protect a PDF with a password", width: 720, height: 1280 },
+    ],
     legal: [
       {
         kind: "privacy",
@@ -221,7 +232,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: false,
     noAccount: false,
     glyph: "calendar",
-    tint: ["#ffb340", "#d9480f"],
+    tint: ["#3f9a64", "#1c5a39"],
+    icon: "/apps/crewzeitplan.png",
     featured: true,
     legal: [
       {
@@ -256,7 +268,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: false,
     noAccount: false,
     glyph: "piggy",
-    tint: ["#a78bfa", "#6d28d9"],
+    tint: ["#3a3a3c", "#000000"],
+    icon: "/apps/bilybucks.png",
     legal: [
       {
         kind: "privacy",
@@ -298,7 +311,14 @@ export const apps: readonly AppEntry[] = [
     onDevice: false,
     noAccount: false,
     glyph: "receipt",
-    tint: ["#34d399", "#0f766e"],
+    tint: ["#12c060", "#0a7a3c"],
+    icon: "/apps/owebuddy.png",
+    screenshots: [
+      { src: "/apps/screenshots/owebuddy-1.jpg", alt: "OweBuddy screenshot: Create or join groups", width: 720, height: 1558 },
+      { src: "/apps/screenshots/owebuddy-2.jpg", alt: "OweBuddy screenshot: Add an expense and split it", width: 720, height: 1558 },
+      { src: "/apps/screenshots/owebuddy-3.jpg", alt: "OweBuddy screenshot: Settle up with one tap", width: 720, height: 1558 },
+      { src: "/apps/screenshots/owebuddy-4.jpg", alt: "OweBuddy screenshot: Generate PDF reports", width: 720, height: 1558 },
+    ],
     legal: [
       {
         kind: "privacy",
@@ -332,7 +352,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: false,
     noAccount: true,
     glyph: "laugh",
-    tint: ["#ff7ac6", "#c026d3"],
+    tint: ["#6a2be0", "#3b0aa8"],
+    icon: "/apps/memeforge.png",
     legal: [
       {
         kind: "privacy",
@@ -365,7 +386,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: false,
     noAccount: true,
     glyph: "eraser",
-    tint: ["#38bdf8", "#4f46e5"],
+    tint: ["#6a1cf0", "#ff8a3d"],
+    icon: "/apps/rovierase.png",
     legal: [
       {
         kind: "privacy",
@@ -399,7 +421,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: true,
     noAccount: true,
     glyph: "image",
-    tint: ["#2dd4bf", "#0e7490"],
+    tint: ["#3b6cf0", "#1b1b8f"],
+    icon: "/apps/imgpres.png",
     legal: [
       {
         kind: "privacy",
@@ -433,7 +456,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: true,
     noAccount: true,
     glyph: "video",
-    tint: ["#fb7185", "#be123c"],
+    tint: ["#3a22e6", "#1a0099"],
+    icon: "/apps/vidcompres.png",
     legal: [
       {
         kind: "privacy",
@@ -466,7 +490,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: true,
     noAccount: true,
     glyph: "post",
-    tint: ["#60a5fa", "#1d4ed8"],
+    tint: ["#6f8dff", "#3554d1"],
+    icon: "/apps/chirpfake.png",
     legal: [
       {
         kind: "privacy",
@@ -499,7 +524,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: true,
     noAccount: true,
     glyph: "download",
-    tint: ["#4ade80", "#15803d"],
+    tint: ["#06c167", "#04934d"],
+    icon: "/apps/statussaver.png",
     legal: [
       {
         kind: "privacy",
@@ -533,7 +559,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: false,
     noAccount: true,
     glyph: "parking",
-    tint: ["#818cf8", "#3730a3"],
+    tint: ["#12c468", "#0a7a3c"],
+    icon: "/apps/parkglide.png",
     legal: [
       {
         kind: "privacy",
@@ -567,7 +594,8 @@ export const apps: readonly AppEntry[] = [
     onDevice: false,
     noAccount: true,
     glyph: "route",
-    tint: ["#fbbf24", "#ea580c"],
+    tint: ["#ff4fa3", "#2a2bd0"],
+    icon: "/apps/roviway.png",
     legal: [
       {
         kind: "privacy",

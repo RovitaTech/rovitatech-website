@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Check, ChevronRight, FileText, ShieldCheck } from "lucide-react";
@@ -121,6 +122,30 @@ export default async function AppPage({ params }: { params: Promise<Params> }) {
           </div>
         </Container>
       </section>
+
+      {app.screenshots?.length ? (
+        <section aria-labelledby="screenshots" className="bg-mist py-20 sm:py-28">
+          <Container>
+            <h2 id="screenshots" className="display-md text-ink">
+              A closer look
+            </h2>
+          </Container>
+          <ul className="mx-auto mt-10 flex max-w-[1120px] snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:gap-5 sm:px-8">
+            {app.screenshots.map((shot) => (
+              <li key={shot.src} className="w-[62vw] max-w-[250px] shrink-0 snap-start sm:w-auto sm:flex-1">
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={shot.width}
+                  height={shot.height}
+                  sizes="(min-width: 640px) 250px, 62vw"
+                  className="aspect-[720/1558] w-full rounded-[22px] object-cover object-top shadow-[0_0_0_1px_rgba(0,0,0,0.06)]"
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="bg-ink py-20 text-white sm:py-28">
         <Container>

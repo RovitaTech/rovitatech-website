@@ -73,13 +73,13 @@ function Pdf4youArt({ tone }: { tone: Tone }) {
         <span className={`absolute inset-0 -rotate-[9deg] rounded-2xl ${sheet} opacity-60`} />
         <span className={`absolute inset-0 rotate-[6deg] rounded-2xl ${sheet} opacity-80`} />
         <div className={`absolute inset-0 flex flex-col gap-3 rounded-2xl p-6 ${sheet}`}>
-          <span className="w-fit rounded-md bg-[#e5252a] px-2 py-1 text-[0.6875rem] font-bold tracking-wide text-white">PDF</span>
+          <span className="w-fit rounded-md bg-[#7c4dff] px-2 py-1 text-[0.6875rem] font-bold tracking-wide text-white">PDF</span>
           <Bar w="88%" tone={tone} />
           <Bar w="96%" tone={tone} />
           <Bar w="64%" tone={tone} />
           <Bar w="90%" tone={tone} />
           <Bar w="52%" tone={tone} />
-          <svg viewBox="0 0 120 40" className="mt-auto w-[62%] text-link" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+          <svg viewBox="0 0 120 40" className="mt-auto w-[62%] text-[#7c4dff]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
             <path d="M4 30c10-22 18-26 20-14s6 16 14 2 12-12 14-2 8 10 16-2 14-8 18 2 10 6 20-4" />
           </svg>
           <span className={`h-px w-[70%] ${dark ? "bg-white/20" : "bg-black/15"}`} />
@@ -182,7 +182,7 @@ function CrewZeitplanArt({ tone }: { tone: Tone }) {
             {row.map((cell, cellIndex) => (
               <span
                 key={cellIndex}
-                className={`h-8 rounded-lg sm:h-9 ${cell === 1 ? "bg-[#ff9f1c]" : cell === 2 ? "bg-[#ffd699]" : off}`}
+                className={`h-8 rounded-lg sm:h-9 ${cell === 1 ? "bg-[#2f8f5b]" : cell === 2 ? "bg-[#a9d8bc]" : off}`}
               />
             ))}
           </RosterRow>

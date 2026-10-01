@@ -58,7 +58,7 @@ export function AppIcon({ app, size = 64 }: { app: IconSource; size?: number }) 
         width={size}
         height={size}
         style={{ borderRadius: radius }}
-        className="shrink-0 shadow-[0_1px_2px_rgba(0,0,0,0.12),0_8px_24px_-8px_rgba(0,0,0,0.3)]"
+        className="shrink-0 shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.12),0_8px_24px_-8px_rgba(0,0,0,0.3)]"
       />
     );
   }
