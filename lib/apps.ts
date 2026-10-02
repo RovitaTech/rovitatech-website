@@ -173,6 +173,48 @@ export const apps: readonly AppEntry[] = [
     ],
   },
   {
+    slug: "docscannerpro",
+    name: "Docs Scanner Pro",
+    category: "Productivity",
+    platforms: ["iPhone"],
+    tagline: "Scan, sign and share documents as PDFs.",
+    summary:
+      "Docs Scanner Pro turns an iPhone or iPad into a document scanner. Capture clean scans, keep them organised in smart folders, and sign, convert or share them as PDFs.",
+    features: [
+      "Auto-crop and enhance scans of documents, ID cards, receipts and books",
+      "Smart folders that sort documents by type",
+      "Extract text from scans on your device",
+      "Convert PDFs to Word, Excel and PowerPoint",
+      "Sign, merge, compress and password-protect PDFs",
+    ],
+    privacy: [
+      "Scans and documents are stored on your device",
+      "Scanning, text recognition and sorting run on your device",
+      "Files sent to a conversion tool are deleted right after processing",
+      "No third-party advertising or analytics SDKs",
+    ],
+    onDevice: false,
+    noAccount: true,
+    glyph: "document",
+    tint: ["#1ea7ff", "#0050e6"],
+    icon: "/apps/docscannerpro.png",
+    screenshots: [
+      { src: "/apps/screenshots/docscannerpro-1.jpg", alt: "Docs Scanner Pro screenshot: Scan, sign and share as PDF", width: 720, height: 1558 },
+      { src: "/apps/screenshots/docscannerpro-2.jpg", alt: "Docs Scanner Pro screenshot: Every file, neatly organised", width: 720, height: 1558 },
+      { src: "/apps/screenshots/docscannerpro-3.jpg", alt: "Docs Scanner Pro screenshot: 30 document tools", width: 720, height: 1558 },
+      { src: "/apps/screenshots/docscannerpro-4.jpg", alt: "Docs Scanner Pro screenshot: Sign, merge and protect PDFs", width: 720, height: 1558 },
+    ],
+    legal: [
+      {
+        kind: "privacy",
+        href: "/privacy-policy/docscannerpro",
+        lang: "en",
+        updated: "2026-10-02",
+        updatedLabel: "October 2, 2026",
+      },
+    ],
+  },
+  {
     slug: "rovidiskclean",
     name: "Rovi Disk Clean",
     category: "Utilities",
