@@ -20,6 +20,7 @@ export type AppCategory =
   | "Photo & video"
   | "Creativity"
   | "Navigation"
+  | "Health & Fitness"
   | "Utilities";
 
 export type AppGlyph =
@@ -247,6 +248,49 @@ export const apps: readonly AppEntry[] = [
         lang: "en",
         updated: "2026-09-30",
         updatedLabel: "September 30, 2026",
+      },
+    ],
+  },
+  {
+    slug: "femmepal",
+    name: "FemmePal",
+    category: "Health & Fitness",
+    platforms: ["iPhone"],
+    tagline: "Period, ovulation, pregnancy and baby tracking in one calm app.",
+    summary:
+      "FemmePal predicts your period, fertile window and ovulation from your own cycles, follows your pregnancy week by week and logs your baby's first months, with a read-only view you can share with your partner.",
+    features: [
+      "Period, fertile window and ovulation predictions that learn from your cycles",
+      "Month and year calendar with every period and ovulation day marked",
+      "Best days to try when you're trying to conceive",
+      "Pregnancy week by week, then feeds, sleep, diapers and growth for your baby",
+      "Read-only partner sharing that you control",
+    ],
+    privacy: [
+      "Health data is used only to run the app, never for advertising, and never sold",
+      "No analytics, advertising or tracking SDKs",
+      "Data stored in the EU, encrypted in transit",
+      "Sexual activity entries are never shared, even with your partner",
+      "Delete everything you've logged at any time from Profile",
+    ],
+    onDevice: false,
+    noAccount: false,
+    glyph: "calendar",
+    tint: ["#e0457b", "#5b1f6b"],
+    icon: "/apps/femmepal.png",
+    screenshots: [
+      { src: "/apps/screenshots/femmepal-1.jpg", alt: "FemmePal screenshot: Know your rhythm", width: 720, height: 1558 },
+      { src: "/apps/screenshots/femmepal-2.jpg", alt: "FemmePal screenshot: Every day, at a glance", width: 720, height: 1558 },
+      { src: "/apps/screenshots/femmepal-3.jpg", alt: "FemmePal screenshot: Your best days to try", width: 720, height: 1558 },
+      { src: "/apps/screenshots/femmepal-4.jpg", alt: "FemmePal screenshot: Let your partner in", width: 720, height: 1558 },
+    ],
+    legal: [
+      {
+        kind: "privacy",
+        href: "/privacy-policy/femmepal",
+        lang: "en",
+        updated: "2026-10-02",
+        updatedLabel: "October 2, 2026",
       },
     ],
   },
