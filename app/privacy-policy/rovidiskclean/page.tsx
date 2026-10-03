@@ -52,7 +52,7 @@ export default function RoviDiskCleanPrivacyPolicy() {
 
       <Section title="3. What the App Stores">
         <P>
-          The app saves a single setting on your Mac: your preferred delete mode (Smart, Always Trash or Always Delete). Nothing else is written, apart from the changes you choose to make when cleaning.
+          The app saves a single setting on your Mac: your preferred delete mode (Smart, Always Trash or Always Delete). The Mac App Store edition also remembers the folder permission you grant (your Home folder), so macOS does not ask again. Nothing else is written, apart from the changes you choose to make when cleaning.
         </P>
       </Section>
 
